@@ -6,7 +6,7 @@ const lowerCase = (arr) =>
         ));
     });
 
-    lowerCase(["Phoenix", 101336759, "ANI", "TeSt", true])
+    lowerCase(["Phoenix", 101336759, "ANI", "TeSt PrOdUcT", true, "sEe ME RollIn", 0.39])
 
         .then((res)=> console.log(res))
         .catch((err)=> console.log(err))
