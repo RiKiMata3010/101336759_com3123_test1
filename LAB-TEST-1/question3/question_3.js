@@ -1,21 +1,21 @@
 const fs = require("fs");
 
 const createLogs = () => {
-  const target = "./logs";
-  if (!fs.existsSync(target)) {
-    fs.mkdirSync(target);
+  const path = "./logs";
+  if (!fs.existsSync(path)) {
+    fs.mkdirSync(path);
   }
-  process.chdir(target);
+  process.chdir(path);
   for (let i = 0; i < 10; i++) {
-    fs.writeFile(`log${i}.txt`, `This is the log file number ${i}`, (err) =>
-      err ? console.error(`Error creating file 'log${i}.txt'`) : console.log(`Creating file 'log${i}.txt'`)
+    fs.writeFile(`log${i}.txt`, `Log no. ${i}`, (err) =>
+      err ? console.error(`Error : Cannot create file log' ${i}.txt'`) : console.log(`'Creating log${i}.txt'`)
     );
   }
 };
 const removeLogs = () => {
-  const target = "./logs";
-  if (fs.existsSync(target)) {
-    process.chdir(target);
+  const path = "./logs";
+  if (fs.existsSync(path)) {
+    process.chdir(path);
 
     fs.readdir(process.cwd(), (err, files) => {
       files.forEach((file) => {
@@ -26,5 +26,6 @@ const removeLogs = () => {
     });
   }
 };
-// createLogs();
-// removeLogs();
+
+createLogs();
+//removeLogs();

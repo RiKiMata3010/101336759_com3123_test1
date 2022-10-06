@@ -1,14 +1,15 @@
-const resolvedPromise = () =>
+const resPromise = () =>
     new Promise((resolve, reject)=>{
         setTimeout(resolve({ message : "delayed success!" }), 500)
     });
+    
+resPromise().then((msg) => console.log(msg));
 
-const rejectPromise = () =>
+const rejPromise = () =>
     new Promise((resolve, reject)=>{
         setTimeout(reject({ error : "delayed exception!"}), 500)
     });
 
-resolvedPromise().then((msg) => console.log(msg));
-rejectPromise().then((msg) => console.log(msg));
+rejPromise().catch((msg) => console.log(msg));
 
 
