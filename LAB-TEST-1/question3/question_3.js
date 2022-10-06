@@ -27,5 +27,6 @@ const removeLogs = () => {
   }
 };
 
+//Comment out removeLogs() first to create logs then comment out createLogs to remove logs
 createLogs();
 //removeLogs();
