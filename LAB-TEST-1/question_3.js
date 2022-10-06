@@ -26,4 +26,5 @@ const removeLogs = () => {
     });
   }
 };
-
+createLogs();
+removeLogs();
