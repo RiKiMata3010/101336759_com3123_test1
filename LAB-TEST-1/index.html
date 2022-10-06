@@ -9,15 +9,18 @@
 </head>
 <body>
     <script>
-        const lowerCaseWords = (arr)=>
-    new Promise((resolve, reject)=>{
-        if (!arr || arr.length === 0 || !Array.isArray(arr)) reject("Invalid inuput array");
-        resolve(arr.filter((item) => isNaN(item)).map((word)=>word.toLowerCase()));
-    });
+        const resolvedPromise = () =>
+            new Promise((resolve, reject)=>{
+            setTimeout(resolve({ message : "delayed success!" }), 500)
+            });
+        resolvedPromise().then((msg) => console.log(msg));    
+        const rejectPromise = () =>
+            new Promise((resolve, reject)=>{
+            setTimeout(reject({ error : "delayed exception!"}), 500)
+            });
 
-    lowerCaseWords(["Phoenix", 101336759, "ANI", "TeSt", true])
-        .then((res)=> console.log(res))
-        .catch((err)=> console.log(err))
+        rejectPromise().then((msg) => console.log(msg));
+
     </script>
 </body>
 </html>
