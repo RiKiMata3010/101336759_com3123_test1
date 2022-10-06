@@ -12,7 +12,6 @@ const createLogs = () => {
     );
   }
 };
-
 const removeLogs = () => {
   const target = "./logs";
   if (fs.existsSync(target)) {
@@ -27,5 +26,5 @@ const removeLogs = () => {
     });
   }
 };
-createLogs();
-removeLogs();
+// createLogs();
+// removeLogs();
